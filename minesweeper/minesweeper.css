@@ -21,7 +21,7 @@ body {
   background-image: url("background.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 110%;
+  background-size: cover;
   background-color: rgb(27, 27, 27);
 }
 
@@ -106,7 +106,7 @@ div.marked, div.marked:hover {
   margin-right: 8px;
 }
 
-img {
+.home img {
   height: 50px;
   margin-top: 40px;
   margin-right: 600px;

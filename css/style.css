@@ -119,6 +119,15 @@ ul.social li {
   position: fixed;
 }
 
+.tech-background {
+  background-image: url('../img/computercode2.jpg');
+  position: fixed;
+}
+
+.core-background {
+  background-image: url('../img/light-bulb.jpg');
+  position: fixed;
+}
 
 /*============= FOOTER =============*/
 footer {

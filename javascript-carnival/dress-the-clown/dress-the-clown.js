@@ -26,115 +26,108 @@ function whatAmIChanging() {
   }
 }
 
-document.addEventListener('keydown', function(e){
-  if (e.keyCode === 40) {
-    bodyPart++
-    if (bodyPart === 3) {
-      bodyPart = 0
-    }
-  } else if (e.keyCode = 38) {
-    bodyPart--
-    if (bodyPart === -1) {
-      bodyPart = 2
-    }
-  } 
-  whatAmIChanging()
-})
-
-// function changeBodyPartUp () {
-//   if (bodyPart === 0) {
-//     bodyPart++
-//   } else if (bodyPart === 1) {
-//     bodyPart++
-//   } else if (bodyPart === 2) {
-//     bodyPart = 0
-//   }
-//   whatAmIChanging()
-// }
-
-// function changeBodyPartDown () {
-//   if (bodyPart === 2) {
-//     bodyPart--
-//   } else if (bodyPart === 1) {
-//     bodyPart--
-//   } else if (bodyPart === 0) {
-//     bodyPart = 2
-//   }
-//   whatAmIChanging()
-// }
-
-document.addEventListener('keydown', function(event){
+function changeBodyPartUp () {
   if (bodyPart === 0) {
-    head.src = "./images/head" + headCount + ".png"
-      if (event.keyCode == 39 && headCount < 5) {
-        headCount++
-      } else if (event.keyCode == 39 && headCount === 6) {
-        headCount = 0
-      } else if (event.keyCode == 37 && headCount >= 1) {
-        headCount--
-      } else if (event.keyCode == 37 && headCount < 5) {
-        headCount = 5
-      } 
-    // savedImg.push(headCount)  
+    bodyPart++
   } else if (bodyPart === 1) {
-    body.src = "./images/body" + bodyCount + ".png"
-    if (event.keyCode == 39 && bodyCount < 5) {
+    bodyPart++
+  } else if (bodyPart === 2) {
+    bodyPart = 0
+  }
+  whatAmIChanging()
+}
+
+function changeBodyPartDown () {
+  if (bodyPart === 2) {
+    bodyPart--
+  } else if (bodyPart === 1) {
+    bodyPart--
+  } else if (bodyPart === 0) {
+    bodyPart = 2
+  }
+  whatAmIChanging()
+}
+
+//Change Head
+function changeHeadUp () {
+  var headSrc = "./images/head" + headCount + ".png"
+    head.src = headSrc
+    if (bodyPart === 0 && headCount < 5) {
+      headCount++
+    } else if (bodyPart === 0 && headCount === 5) {
+      headCount = 0
+    }
+}
+
+function changeHeadDown () {
+  var headSrc = "./images/head" + headCount + ".png"
+    head.src = headSrc
+    if (bodyPart === 0 && headCount >= 1) {
+      headCount--
+    } else if (bodyPart === 0 && headCount < 5) {
+      headCount = 5
+    }
+}
+
+//Change body
+function changeBodyUp () {
+  var bodySrc = "./images/body" + bodyCount + ".png"
+    body.src = bodySrc
+    if (bodyPart === 1 && bodyCount < 5) {
       bodyCount++
-    } else if (event.keyCode == 39 && bodyCount === 6) {
+    } else if (bodyPart === 1 && bodyCount === 5) {
       bodyCount = 0
-    } else if (event.keyCode == 37 && bodyCount >= 1) {
+    }
+}
+
+function changeBodyDown () {
+  var bodySrc = "./images/body" + bodyCount + ".png"
+    body.src = bodySrc
+    if (bodyPart === 1 && bodyCount >= 1) {
       bodyCount--
-    } else if (event.keyCode == 37 && bodyCount < 5) {
+    } else if (bodyPart === 1 && bodyCount < 5) {
       bodyCount = 5
     }
-  // savedImg.push(bodyCount)  
-  } else if (bodyPart === 2) {
-    shoes.src = "./images/shoes" + shoesCount + ".png"
-    if (event.keyCode == 39 && shoesCount < 5) {
+}
+
+//Change shoes
+
+function changeShoesUp () {
+  var shoesSrc = "./images/shoes" + shoesCount + ".png"
+    shoes.src = shoesSrc
+    if (bodyPart === 2 && shoesCount < 5) {
       shoesCount++
-    } else if (event.keyCode == 39 && shoesCount === 5) {
+    } else if (bodyPart === 2 && shoesCount === 5) {
       shoesCount = 0
-    } else if (event.keyCode == 37 && shoesCount >= 1) {
+    }
+}
+
+function changeShoesDown () {
+  var shoesSrc = "./images/shoes" + shoesCount + ".png"
+    shoes.src = shoesSrc
+    if (bodyPart === 2 && shoesCount >= 1) {
       shoesCount--
-    } else if (event.keyCode == 37 && shoesCount < 5) {
+    } else if (bodyPart === 2 && shoesCount < 5) {
       shoesCount = 5
     }
-  // savedImg.push(shoesCount)  
-  } 
-})
+}
 
-// document.onkeydown = function(event) {
-//  if (event.keyCode === 40) {
-//     changeBodyPartUp()
-//   } else if (event.keyCode === 38) {
-//     changeBodyPartDown()
-//   } 
-// }
-
-// // // Get a reference to the image element
-// var savedImg = document.getElementsByClassName("dress-a-parent")[0];
-// var button = document.getElementById("saveButton")
-
-// // Take action when the image has loaded <- change to button click
-// button.addEventListener("onclick", function () {
-//     var imgCanvas = document.createElement("canvas"),
-//         imgContext = imgCanvas.getContext("2d");
-
-//     // Make sure canvas is as big as the picture
-//     imgCanvas.width = savedImg.width;
-//     imgCanvas.height = savedImg.height;
-
-//     // Draw image into canvas element
-//     imgContext.drawImage(savedImg, 0, 0, savedImg.width, savedImg.height);
-
-//     // Get canvas contents as a data URL
-//     var imgAsDataURL = imgCanvas.toDataURL("image/png");
-
-//     // Save image into localStorage
-//     try {
-//         localStorage.setItem("savedImg", imgAsDataURL);
-//     }
-//     catch (e) {
-//         console.log("Storage failed: " + e);
-//     }
-// }, false)
+document.onkeydown = function(event) {
+  if (event.keyCode === 37 && bodyPart === 0) {
+    changeHeadDown()
+  } else if (event.keyCode === 37 && bodyPart === 1) {
+    changeBodyDown()
+  } else if (event.keyCode === 37 && bodyPart === 2) {
+    changeShoesDown()
+  } else if (event.keyCode === 39 && bodyPart === 0) {
+    changeHeadUp()
+  } else if (event.keyCode === 39 && bodyPart === 1) {
+    changeBodyUp()
+  } else if (event.keyCode === 39 && bodyPart === 2) { 
+    changeShoesUp()
+  } else if (event.keyCode === 38) {
+    changeBodyPartUp()
+  } else if (event.keyCode === 40) {
+    changeBodyPartDown()
+  }
+}

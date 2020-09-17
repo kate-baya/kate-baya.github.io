@@ -154,3 +154,15 @@ td {
   text-decoration: none;
   cursor: pointer;
 }
+
+.home img {
+  height: 50px;
+  margin-top: 40px;
+  margin-left: 50px;
+}
+
+#selector #save {
+    height: 50px;
+    margin-top: 40px;
+    margin-left: 50px;
+}
