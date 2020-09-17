@@ -1,0 +1,113 @@
+@font-face {
+  font-family: 'Jurassic Park';
+  src: url('JurassicPark.woff2') format('woff2'),
+      url('JurassicPark.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Jurassic Park';
+  color: rgb(247, 239, 239);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: flex-center;
+  flex-direction: column;
+  background-image: url("background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 110%;
+  background-color: rgb(27, 27, 27);
+}
+
+#message, #notes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  letter-spacing: 3px;
+}
+
+#notes {
+  font-size: 3rem;
+}
+
+#message {
+  font-size: 8rem;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.board div {
+  color: white;
+  font-size: 2rem;
+  width: 75px;
+  height: 75px;
+  border: 6px rgba(0, 0, 0, 0.884) line;
+  border-radius: 10%;
+  background-color: rgb(101, 163, 44);
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board div:hover {
+  background-color: rgba(97, 196, 5, 0.815);
+}
+
+div.mine, div.mine:hover {
+  background: no-repeat center/60% url("images/dinosaur.png") rgba(117, 25, 18);
+}
+
+div.hidden {
+  background: rgb(68, 136, 4);
+}
+
+div.hidden:hover {
+  background: rgba(97, 196, 5, 0.815);
+}
+
+div.marked, div.marked:hover {
+  background: no-repeat center/60% url("images/scratch2.png") rgb(1, 26, 19);
+}
+
+.on  { background:blue; }
+      .off { background:rgb(231, 245, 227); }
+
+      p {
+        display: block;
+        margin-block-start: .15em;
+        margin-block-end: .15em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+
+.container {
+  background-color: rgb(27, 27, 27);
+  padding-left: 1.7%;
+  padding-right: 1.7%;
+  outline: yellow;
+  outline-style: solid;
+  outline-width: 4px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}    
+
+.btn {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+img {
+  height: 50px;
+  margin-top: 40px;
+  margin-right: 600px;
+}
